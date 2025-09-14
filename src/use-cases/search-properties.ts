@@ -10,6 +10,7 @@ export class SearchPropertiesUseCase {
 
 	async execute(): Promise<SearchPropertiesUseCaseResponse> {
 		const properties = await this.repository.find();
+
 		return { properties };
 	}
 }

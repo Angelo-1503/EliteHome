@@ -1,9 +1,10 @@
 import path from 'node:path';
 import type { Knex } from 'knex';
+import { envs } from './src/config/envs';
 
 const config: Knex.Config = {
 	client: 'postgresql',
-	connection: 'postgres://docker:docker@localhost:5432/elitehome',
+	connection: envs.POSTGRES_CONN_STRING,
 	pool: {
 		min: 2,
 		max: 10,
